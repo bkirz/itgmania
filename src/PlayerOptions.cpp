@@ -497,6 +497,7 @@ void PlayerOptions::GetMods( std::vector<RString> &AddTo, bool bForceNoteSkin ) 
 	if( m_bTurns[TURN_SOFT_SHUFFLE] )	AddTo.push_back( "SoftShuffle" );
 	if( m_bTurns[TURN_SUPER_SHUFFLE] )	AddTo.push_back( "SuperShuffle" );
 	if( m_bTurns[TURN_HYPER_SHUFFLE] )	AddTo.push_back( "HyperShuffle" );
+	if (m_bTurns[TURN_SWAP_LEFT_RIGHT])	AddTo.push_back("SwapLeftRight");
 
 	if( m_bTransforms[TRANSFORM_NOHOLDS] )	AddTo.push_back( "NoHolds" );
 	if( m_bTransforms[TRANSFORM_NOROLLS] )	AddTo.push_back( "NoRolls" );

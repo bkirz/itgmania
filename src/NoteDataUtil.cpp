@@ -1857,6 +1857,60 @@ static void GetTrackMapping( StepsType st, NoteDataUtil::TrackMapping tt, int Nu
 				break;
 		}
 		break;
+	case NoteDataUtil::swap_left_right:
+		switch(st)
+		{
+			case StepsType_dance_single:
+				iTakeFromTrack[0]= 3;
+				iTakeFromTrack[1]= 1;
+				iTakeFromTrack[2]= 2;
+				iTakeFromTrack[3]= 0;
+				break;
+			case StepsType_dance_double:
+			case StepsType_dance_couple:
+			case StepsType_dance_routine:
+				iTakeFromTrack[0]= 7;
+				iTakeFromTrack[1]= 5;
+				iTakeFromTrack[2]= 6;
+				iTakeFromTrack[3]= 4;
+				iTakeFromTrack[4]= 3;
+				iTakeFromTrack[5]= 1;
+				iTakeFromTrack[6]= 2;
+				iTakeFromTrack[7]= 0;
+				break;
+			case StepsType_pump_single:
+				iTakeFromTrack[0]= 4;
+				iTakeFromTrack[1]= 3;
+				iTakeFromTrack[2]= 2;
+				iTakeFromTrack[3]= 1;
+				iTakeFromTrack[4]= 0;
+				break;
+			case StepsType_pump_double:
+			case StepsType_pump_couple:
+			case StepsType_pump_routine:
+				iTakeFromTrack[0]= 9;
+				iTakeFromTrack[1]= 8;
+				iTakeFromTrack[2]= 7;
+				iTakeFromTrack[3]= 6;
+				iTakeFromTrack[4]= 5;
+				iTakeFromTrack[5]= 4;
+				iTakeFromTrack[6]= 3;
+				iTakeFromTrack[7]= 2;
+				iTakeFromTrack[8]= 1;
+				iTakeFromTrack[9]= 0;
+				break;
+			case StepsType_pump_halfdouble:
+				iTakeFromTrack[0]= 5;
+				iTakeFromTrack[1]= 4;
+				iTakeFromTrack[2]= 3;
+				iTakeFromTrack[3]= 2;
+				iTakeFromTrack[4]= 1;
+				iTakeFromTrack[5]= 0;
+				break;
+			default:
+				break;
+		}
+		break;
 	default:
 		ASSERT(0);
 	}
@@ -2779,6 +2833,16 @@ void NoteDataUtil::SwapUpDown(NoteData& inout, StepsType st)
 {
 	int TakeFrom[MAX_NOTE_TRACKS];
 	GetTrackMapping(st, NoteDataUtil::swap_up_down, inout.GetNumTracks(), TakeFrom);
+	NoteData tempND;
+	tempND.LoadTransformed(inout, inout.GetNumTracks(), TakeFrom);
+	inout.CopyAll(tempND);
+	inout.RevalidateATIs(std::vector<int>(), false);
+}
+
+void NoteDataUtil::SwapLeftRight(NoteData& inout, StepsType st)
+{
+	int TakeFrom[MAX_NOTE_TRACKS];
+	GetTrackMapping(st, NoteDataUtil::swap_left_right, inout.GetNumTracks(), TakeFrom);
 	NoteData tempND;
 	tempND.LoadTransformed(inout, inout.GetNumTracks(), TakeFrom);
 	inout.CopyAll(tempND);

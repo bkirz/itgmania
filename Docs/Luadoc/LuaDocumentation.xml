@@ -4340,6 +4340,7 @@ prev_note_name, succeeded = options:NoteSkin("cel")
 	<Function name='StealthPastReceptors' return='bool' arguments='bool value'> </Function>
 	<Function name='StealthType' return='bool' arguments='bool value'> </Function>
 	<Function name='Stomp' return='bool' arguments='bool value'> </Function>
+	<Function name='SwapLeftRight' return='bool' arguments='bool value'> </Function>
 	<Function name='Sudden' return='float, float' arguments='float value, float approach_speed'> </Function>
 	<Function name='SuddenOffset' return='float, float' arguments='float value, float approach_speed'> </Function>
 	<Function name='SuperShuffle' return='bool' arguments='bool value'> </Function>
