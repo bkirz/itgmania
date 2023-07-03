@@ -1370,6 +1370,7 @@
 			<Function name='SuddenOffset'/>
 			<Function name='SuperShuffle'/>
 			<Function name='SwapLeftRight'/>
+			<Function name='SwapUpDown'/>
 			<Function name='Tilt'/>
 			<Function name='TimeSpacing'/>
 			<Function name='Tiny'/>

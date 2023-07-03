@@ -486,6 +486,7 @@ public:
 		right, /**< Turn the notes as if you were facing to the right. */
 		mirror, /**< Flip the notes vertically. */
 		swap_left_right, /**< Flip the notes horizontally. */
+		swap_up_down, /**< Flip the notes horizontally. */
 		turn_backwards, /**< Turn the notes as if you were facing away from the machine. */
 		shuffle, /**< Replace one column with another column. */
 		super_shuffle, /**< Replace each note individually. */
@@ -526,7 +527,6 @@ public:
 		collapse_left,
 		shift_left,
 		shift_right,
-		swap_up_down,
 		arbitrary_remap,
 		NUM_ALTER_TYPES
 	};

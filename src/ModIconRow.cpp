@@ -103,6 +103,7 @@ static const OptionColumnEntry g_OptionColumnEntries[] =
 	{"Shuffle",		3},
 	{"SuperShuffle",3},
 	{"SwapLeftRight",3},
+	{"SwapUpDown",3},
 	//--------------------//
 	{"Little",		4},
 	{"NoHolds",		4},
